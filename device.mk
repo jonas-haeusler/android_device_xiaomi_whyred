@@ -1,5 +1,5 @@
 # 
-# Copyright (C) 2018 The Mokee Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@
 # definition file).
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
+
 $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
 
 # Vendor properties
@@ -29,7 +31,7 @@ $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-mokee
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
@@ -80,14 +82,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
-
-# Alipay
-PRODUCT_PACKAGES += \
-    IFAAService \
-    org.ifaa.android.manager
-
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -289,7 +283,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
-    vendor.mokee.livedisplay@2.0-service-sdm
+    vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -418,7 +412,7 @@ PRODUCT_PACKAGES += \
 
 # Trust HAL
 PRODUCT_PACKAGES += \
-    vendor.mokee.trust@1.0-service
+    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
